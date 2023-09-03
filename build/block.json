@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/image-overlay",
+  "version": "1.0.0",
+  "title": "Image Overlay",
+  "category": "media",
+  "icon": "flag",
+  "description": "This block enables you to present an image with an overlay of text on hover or focus.",
+  "attributes": {
+    "mediaItems": {
+      "type": "array",
+      "source": "query",
+      "selector": ".image-with-overlay",
+      "default": [],
+      "query": {
+        "mediaID": {
+          "type": "number",
+          "source": "attribute",
+          "attribute": "data-id"
+        },
+        "mediaType": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "data-type"
+        },
+        "mediaURL": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "src"
+        },
+        "mediaAlt": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "alt"
+        },
+        "mediaWidth": {
+          "type": "number",
+          "source": "attribute",
+          "attribute": "width"
+        },
+        "mediaHeight": {
+          "type": "number",
+          "source": "attribute",
+          "attribute": "height"
+        }
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": {
+      "text": true
+    }
+  },
+  "textdomain": "image-overlay",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "script": "file:./image-overlay.js"
+}
