@@ -1,4 +1,4 @@
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -6,7 +6,7 @@ import { __ } from "@wordpress/i18n";
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -19,25 +19,28 @@ import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
  * @param {Object} props.attributes Available block attributes.
  * @return {WPElement} Element to render.
  */
-export default function save({ attributes }) {
-  const blockProps = useBlockProps.save();
-  const innerBlocksProps = useInnerBlocksProps.save();
+export default function save( { attributes } ) {
+	const blockProps = useBlockProps.save();
+	const innerBlocksProps = useInnerBlocksProps.save();
 
-  return attributes.mediaItems[0] ? (
-    <image-overlay {...blockProps}>
-      <img
-        className="image-with-overlay"
-        slot="image"
-        data-id={attributes.mediaItems[0].mediaId}
-        data-type={attributes.mediaItems[0].mediaType}
-        src={attributes.mediaItems[0].mediaURL}
-        width={attributes.mediaItems[0].mediaWidth}
-        height={attributes.mediaItems[0].mediaHeight}
-        alt={attributes.mediaItems[0].mediaAlt}
-      />
-      <div {...innerBlocksProps} className="image-overlay__content is-layout-flow" />
-    </image-overlay>
-  ) : (
-    ""
-  );
+	return attributes.mediaItems[ 0 ] ? (
+		<image-overlay { ...blockProps }>
+			<img
+				className="image-with-overlay"
+				slot="image"
+				data-id={ attributes.mediaItems[ 0 ].mediaId }
+				data-type={ attributes.mediaItems[ 0 ].mediaType }
+				src={ attributes.mediaItems[ 0 ].mediaURL }
+				width={ attributes.mediaItems[ 0 ].mediaWidth }
+				height={ attributes.mediaItems[ 0 ].mediaHeight }
+				alt={ attributes.mediaItems[ 0 ].mediaAlt }
+			/>
+			<div
+				{ ...innerBlocksProps }
+				className="image-overlay__content is-layout-flow"
+			/>
+		</image-overlay>
+	) : (
+		''
+	);
 }
