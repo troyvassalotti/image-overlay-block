@@ -1,6 +1,6 @@
 {
 	"name": "image-overlay",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "This block enables you to present an image with an overlay of text on hover or focus.",
 	"author": "Troy Vassalotti",
 	"license": "GPL-2.0-or-later",

@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-export default class ImageOverlay extends LitElement {
+class ImageOverlay extends LitElement {
 	static styles = css`
 		* {
 			box-sizing: border-box;
@@ -62,8 +62,6 @@ export default class ImageOverlay extends LitElement {
 			</figure>
 		`;
 	}
-
-	static {
-		window.customElements.define( 'image-overlay', this );
-	}
 }
+
+customElements.define( 'image-overlay', ImageOverlay );
