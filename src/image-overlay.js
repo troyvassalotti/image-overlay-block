@@ -1,56 +1,54 @@
 import { LitElement, html, css } from 'lit';
 
 export default class ImageOverlay extends LitElement {
-	static get styles() {
-		return css`
-			* {
-				box-sizing: border-box;
-			}
+	static styles = css`
+		* {
+			box-sizing: border-box;
+		}
 
-			*::after,
-			*::before {
-				box-sizing: inherit;
-			}
+		*::after,
+		*::before {
+			box-sizing: inherit;
+		}
 
-			:host {
-				display: block;
-				inline-size: fit-content;
-			}
+		:host {
+			display: block;
+			inline-size: fit-content;
+		}
 
-			::slotted( img ) {
-				block-size: auto;
-				display: block;
-				inline-size: auto;
-				margin-inline: auto;
-				max-inline-size: 100%;
-			}
+		::slotted( img ) {
+			block-size: auto;
+			display: block;
+			inline-size: auto;
+			margin-inline: auto;
+			max-inline-size: 100%;
+		}
 
-			.figure {
-				margin: 0;
-				position: relative;
-			}
+		.figure {
+			margin: 0;
+			position: relative;
+		}
 
-			.caption {
-				display: grid;
-				inset: 0;
-				opacity: 0;
-				overflow: auto;
-				place-items: center;
-				position: absolute;
-				transition: 0.3s ease;
-			}
+		.caption {
+			display: grid;
+			inset: 0;
+			opacity: 0;
+			overflow: auto;
+			place-items: center;
+			position: absolute;
+			transition: 0.3s ease;
+		}
 
-			.caption:focus-within,
-			.caption:hover {
-				background-color: hsl( 0 0% 0% / 0.5 );
-				opacity: 1;
-			}
+		.caption:focus-within,
+		.caption:hover {
+			background-color: hsl( 0 0% 0% / 0.5 );
+			opacity: 1;
+		}
 
-			.content {
-				inline-size: 100%;
-			}
-		`;
-	}
+		.content {
+			inline-size: 100%;
+		}
+	`;
 
 	render() {
 		return html`
