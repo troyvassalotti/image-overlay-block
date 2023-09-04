@@ -10,3 +10,17 @@
 		padding: 1.5rem;
 	}
 }
+
+.c-two-page__container {
+	gap: 0;
+
+	image-overlay {
+		block-size: 100%;
+	}
+
+	&.alignfull {
+		> .c-two-page__page {
+			padding: 0;
+		}
+	}
+}

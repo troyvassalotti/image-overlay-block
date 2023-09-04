@@ -17,14 +17,16 @@ class ImageOverlay extends LitElement {
 		}
 
 		::slotted( img ) {
-			block-size: auto;
+			block-size: 100%;
 			display: block;
 			inline-size: auto;
 			margin-inline: auto;
 			max-inline-size: 100%;
+			object-fit: cover;
 		}
 
 		.figure {
+			block-size: 100%;
 			margin: 0;
 			position: relative;
 		}

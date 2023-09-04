@@ -1,6 +1,6 @@
 {
 	"name": "image-overlay",
-	"version": "1.0.2",
+	"version": "1.0.5",
 	"description": "This block enables you to present an image with an overlay of text on hover or focus.",
 	"author": "Troy Vassalotti",
 	"license": "GPL-2.0-or-later",
@@ -12,6 +12,8 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
+		"postbuild": "npm run plugin-zip",
+		"prebuild": "npm run format",
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
